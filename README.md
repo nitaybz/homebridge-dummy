@@ -1,7 +1,7 @@
 
 # Homebridge-Delay-Switch
 
-With this plugin, you can create any number of fake switches that will start a timer when turned ON, when the delay time is reached the switch will automatically turn OFF and trigger a dedicated motion sensor for 3 seconds. This can be very useful for advanced automation with HomeKit scenes - when delayed actions are required.
+With this plugin, you can create any number of fake switches that will start a timer when turned ON, when the delay time is reached the switch will automatically turn OFF and trigger a dedicated motion sensor for a configurable duration (default is 3 seconds). This can be very useful for advanced automation with HomeKit scenes - when delayed actions are required.
 
 ## How to install
 
@@ -17,7 +17,8 @@ With this plugin, you can create any number of fake switches that will start a t
           "accessory": "DelaySwitch",
           "name": "DelaySwitch",
           "disableSensor": false,
-          "delay": 5000
+          "delay": 5000,
+          "sensorActiveDuration": 3000
         }   
     ]
 
