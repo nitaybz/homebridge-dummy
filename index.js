@@ -15,6 +15,7 @@ function delaySwitch(log, config) {
     this.name = config['name'];
     this.delay = config['delay'];
     this.disableSensor = config['disableSensor'] || false;
+    this.sensorActiveDuration = config['sensorActiveDuration'] || 3000;
     this.timer;
     this.switchOn = false;
     this.motionTriggered = false;
@@ -81,7 +82,7 @@ delaySwitch.prototype.setOn = function (on, callback) {
               setTimeout(function() {
                   this.motionService.getCharacteristic(Characteristic.MotionDetected).updateValue(false);
                   this.motionTriggered = false;
-              }.bind(this), 3000);
+              }.bind(this), this.sensorActiveDuration);
           }
           
         }.bind(this), this.delay);
